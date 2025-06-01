@@ -1,0 +1,98 @@
+<section class="hero" id="hero">
+        <div class="hero-overlay">
+            <div class="container text-center">
+                <!-- <img src="image/logo.png" alt="Supreme Printing Logo" class="hero-logo"> -->
+                <h1 class="hero-title" data-i18n="hero.title">Supreme Printing</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Welcome to Your Trusted Partner for Printing, Giveaways, and Advertising Solutions</p>
+                <a href="#services" class="btn btn-primary" data-i18n="hero.exploreServices">Explore Our Services</a>
+            </div>
+        </div>
+</section>
+
+<!-- About Us Section -->
+<section class="about-us" id="about">
+  <div class="container">
+    <h2 class="section-title" data-i18n="aboutUs.title">About Us</h2>
+    <div class="company-profile">
+      <p data-i18n="aboutUs.profile1">Since its establishment in 2016, <strong>Supreme Company for Supply and Advertising (Orchid)</strong> has been a trusted name in the advertising and supply industry. Over the past nine years, we have provided exceptional advertising services to a wide range of organizations, institutions, and advertising agencies. Thanks to our commitment to quality, timely delivery, and client satisfaction, we have earned the confidence of our partners, establishing a strong reputation in the market.</p>
+      <p data-i18n="aboutUs.profile2">Our dedication to excellence drives us to deliver high-quality products tailored to our clients’ needs. From innovative advertising campaigns to premium printing and giveaway solutions, we strive to exceed expectations in every project we undertake.</p>
+    </div>
+    <h3 class="section-subtitle" data-i18n="aboutUs.foundersTitle">Our Founders</h3>
+    <div class="row owners">
+      <div class="col-lg-6 owner">
+        <h4 data-i18n="aboutUs.founder1.name">Alfouly Hassan</h4>
+        <p data-i18n="aboutUs.founder1.desc">Alfouly Hassan, co-founder of Supreme Company, brings extensive experience in strategic planning and business development. His vision and leadership have been pivotal in shaping the company’s growth, ensuring every project meets the highest standards of quality and professionalism.</p>
+      </div>
+      <div class="col-lg-6 owner">
+        <h4 data-i18n="aboutUs.founder2.name">Mohamed</h4>
+        <p data-i18n="aboutUs.founder2.desc">Mohamed, co-founder and creative visionary, excels in design and client relations. His innovative approach to advertising campaigns and dedication to client satisfaction have fostered long-lasting partnerships with prominent organizations across the region.</p>
+      </div>
+    </div>
+    <h3 class="section-subtitle" data-i18n="aboutUs.clientsTitle">Our Valued Clients</h3>
+    <p data-i18n="aboutUs.clientsIntro" style="font-size: 1.5rem ; font-weight: 600;">We are proud to have served a diverse array of esteemed organizations, including:</p>
+    <div class="client-slider">
+      <button class="slider-arrow left-arrow" (click)="slideLeft()">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="slider-container" #clientSlider>
+        <img *ngFor="let client of clients" [src]="client.image" [alt]="client.name">
+      </div>
+      <button class="slider-arrow right-arrow" (click)="slideRight()">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+ <section class="our-services" id="services">
+  <div class="container">
+    <h2 class="section-title" data-i18n="services.title">Our Services</h2>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="service-card offset-printing">
+          <i class="fas fa-print service-icon"></i>
+          <h3 class="service-title" data-i18n="services.offsetPrinting.title">Offset Printing</h3>
+          <p class="service-desc" data-i18n="services.offsetPrinting.desc">High-quality, large-volume printing solutions for professional brochures, posters, and more, ensuring vibrant colors and precision.</p>
+          <a routerLink="/printing" class="btn btn-primary" data-i18n="services.learnMore">Learn More</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="service-card advertising">
+          <i class="fas fa-bullhorn service-icon"></i>
+          <h3 class="service-title">
+            <span data-i18n="services.advertising.title">Advertising & Promotion</span>
+            <br><span dir="rtl" lang="ar" data-i18n="services.advertising.titleAr">(الدعاية والإعلان)</span>
+          </h3>
+          <p class="service-desc" data-i18n="services.advertising.desc">Creative advertising campaigns and promotional materials designed to elevate your brand and engage your audience.</p>
+          <a routerLink="/printing" class="btn btn-primary" data-i18n="services.learnMore">Learn More</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="service-card giveaways">
+          <i class="fas fa-gift service-icon"></i>
+          <h3 class="service-title" data-i18n="services.giveaways.title">Giveaway Products</h3>
+          <p class="service-desc" data-i18n="services.giveaways.desc">Customised promotional gifts, from branded pens to premium merchandise, crafted to leave a lasting impression.</p>
+          <a routerLink="/giveaway" class="btn btn-primary" data-i18n="services.learnMore">Learn More</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="service-card digital-printing">
+          <i class="fas fa-laptop-code service-icon"></i>
+          <h3 class="service-title" data-i18n="services.digitalPrinting.title">Digital Printing</h3>
+          <p class="service-desc" data-i18n="services.digitalPrinting.desc">Fast, high-quality digital printing for small batches, perfect for personalised marketing materials and quick turnarounds.</p>
+          <a routerLink="/printing" class="btn btn-primary" data-i18n="services.learnMore">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact">
+  <app-contact></app-contact>
+</section>

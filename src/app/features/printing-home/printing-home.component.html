@@ -1,0 +1,51 @@
+<div class="printing-home-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Supreme Printing</h1>
+      <p class="hero-description">Your trusted partner for top-quality advertising and design solutions.</p>
+    </div>
+  </section>
+
+  <!-- Text and Video Section -->
+  <section class="text-video-section">
+    <div class="container">
+      <div class="content-wrapper">
+        <div class="text-content">
+          <h2>Our Services</h2>
+          <div class="language-text">
+            <p class="english-text">
+              At Supreme Printing, we offer top-quality advertising and design services. With over 9 years of experience, we create vibrant banners, flyers, and promotional materials to boost your brand.
+            </p>
+            <p class="arabic-text">
+              في سوبريم برنتينج، نقدم خدمات الإعلانات والتصميم عالية الجودة. بخبرة تزيد عن 9 سنوات، نصمم لافتات ونشرات ومواد ترويجية ملونة لتعزيز علامتك التجارية.
+            </p>
+          </div>
+        </div>
+        <div class="video-content">
+          <video #videoElement autoplay muted loop playsinline>
+            <source src="../../../assets/image/offsetvedio.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Works Section -->
+  <section class="works-section">
+    <div class="container">
+      <h2>Our Featured Works</h2>
+      <div class="works-grid">
+        <div class="work-card" *ngFor="let work of works">
+          <img [src]="work.image" [alt]="work.title">
+          <div class="card-content">
+            <h3>{{ work.title }}</h3>
+            <button class="contact-btn" (click)="contactUs()">Contact to Get It Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

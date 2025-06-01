@@ -1,0 +1,498 @@
+
+$primary-color: #ffffff;        // White for light background
+$accent-color: #ff0000;         // Red for accents
+$text-color: #000000;           // Black for text
+$highlight-color: #0033a0;      // Blue for logo/highlights
+$hover-color: #ff0000;   
+
+.hero {
+    position: relative;
+    height: 80vh;
+    background: url('../../../assets/image/heroimg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  
+    .hero-overlay {
+      background: rgba($text-color, 0.5); // Dark overlay for readability
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+  
+    .hero-logo {
+      width: 400px;
+      height: 300px;
+      animation: fadeIn 1s ease-in-out;
+    }
+  
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: $primary-color;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      animation: fadeIn 1.2s ease-in-out;
+      margin-top: -95PX;
+    }
+  
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: $primary-color;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeIn 1.4s ease-in-out;
+    }
+  
+    .btn-primary {
+      background-color: $accent-color;
+      border-color: $accent-color;
+      color: $primary-color;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      animation: fadeIn 1.6s ease-in-out;
+  
+      &:hover {
+        background-color: darken($accent-color, 10%);
+        border-color: darken($accent-color, 10%);
+        transform: translateY(-2px);
+      }
+    }
+  }
+  
+  // Animations
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  // Responsive Styles
+  @media (max-width: 991.98px) {
+    .hero {
+      height: 80vh;
+  
+      .hero-title {
+        font-size: 2.5rem;
+      }
+  
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+  
+      .hero-logo {
+        width: 200px;
+        height: 80px;
+      }
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero {
+      .hero-title {
+        font-size: 2rem;
+      }
+  
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+  
+      .btn-primary {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  // Animation for mobile menu
+  @keyframes slideIn {
+    from {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+$primary-color: #ffffff;
+$accent-color: #ff0000;
+$highlight-color: #0033a0;
+$text-color: #000000;
+
+.about-us {
+  padding: 4rem 0;
+  background-color: $primary-color;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    .section-title {
+      font-size: 2.9rem;
+      font-weight: 700;
+      color: $text-color;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90px;
+        height: 5px;
+        background-color: $accent-color;
+        border-radius: 3px;
+      }
+    }
+
+    .company-profile {
+      margin-bottom: 3rem;
+
+      p {
+        font-size: 1.1rem;
+        color: $text-color;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+
+        strong {
+          color: $highlight-color;
+        }
+      }
+    }
+
+    .section-subtitle {
+      font-size: 2rem;
+      font-weight: 600;
+      color: $accent-color;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      &::after {
+        content: "";
+        flex-grow: 1;
+        height: 2px;
+        background-color: $accent-color;
+        opacity: 0.7;
+      }
+    }
+
+    .row.owners {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 3rem;
+
+      .owner {
+        flex: 1;
+        min-width: 0;
+        padding: 1rem;
+
+        h4 {
+          font-size: 1.5rem;
+          color: $highlight-color;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+          color: $text-color;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    .client-slider {
+      position: relative;
+      margin-bottom: 2rem;
+      padding: 1rem 40px;
+      border-bottom: 5px solid $accent-color;
+
+      .slider-container {
+        display: flex;
+        overflow-x: auto;
+        gap: 2rem;
+        padding-bottom: 10px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        img {
+          height: 100px;
+          object-fit: contain;
+          flex-shrink: 0;
+        }
+      }
+
+      .slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: $primary-color;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+
+        &.left-arrow {
+          left: 0;
+        }
+
+        &.right-arrow {
+          right: 0;
+        }
+
+        &:hover {
+          background: $accent-color;
+        }
+
+        i {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 0;
+
+    .container {
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .company-profile p {
+        font-size: 1rem;
+      }
+
+      .section-subtitle {
+        font-size: 1.5rem;
+      }
+
+      .row.owners .owner {
+        flex: 100%;
+      }
+
+      .client-slider {
+        padding: 1rem 30px;
+
+        .slider-container img {
+          height: 40px;
+        }
+
+        .slider-arrow {
+          padding: 8px;
+
+          i {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// Our Services Section
+.our-services {
+    background: $primary-color;
+  
+    .section-title {
+      font-size: 2.9rem;
+      font-weight: 700;
+      color: $text-color;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90px;
+        height: 5px;
+        background-color: $accent-color;
+        border-radius: 3px;
+      }
+    }
+  
+    .service-card {
+      background: $primary-color;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba($text-color, 0.1);
+      text-align: center;
+      min-height: 500px; // Fixed height for uniformity
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: slideUp 1.2s ease-in-out;
+  
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba($text-color, 0.15);
+      }
+  
+      .service-icon {
+        font-size: 2.5rem;
+        color: $highlight-color;
+        margin-bottom: 1.5rem;
+        transition: color 0.3s ease;
+  
+        .service-card:hover & {
+          color: $accent-color;
+        }
+      }
+  
+      .service-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: $text-color;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+  
+        span[dir="rtl"] {
+          display: block;
+          font-size: 1.2rem;
+          color: $text-color;
+        }
+      }
+  
+      .service-desc {
+        font-size: 1rem;
+        color: $text-color;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        flex-grow: 1; // Ensures description takes available space
+      }
+  
+      .btn-primary {
+        background-color: $accent-color;
+        border-color: $accent-color;
+        color: $primary-color;
+        font-weight: 700;
+        padding: 0.75rem 1.5rem;
+        font-size: 1.1rem;
+        border-radius: 25px;
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        margin-top: auto; // Pushes button to the bottom
+  
+        &:hover {
+          background-color: darken($accent-color, 15%);
+          border-color: darken($accent-color, 15%);
+          transform: scale(1.05);
+          box-shadow: 0 4px 12px rgba($text-color, 0.3);
+        }
+      }
+    }
+  }
+  
+  // Animations
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  // Responsive Styles
+  @media (max-width: 991.98px) {
+    .our-services {
+      padding: 4rem 0;
+  
+      .section-title {
+        font-size: 2.5rem;
+      }
+  
+      .service-card {
+        min-height: 300px;
+        padding: 1.5rem;
+  
+        .service-icon {
+          font-size: 2rem;
+        }
+  
+        .service-title {
+          font-size: 1.4rem;
+  
+          span[dir="rtl"] {
+            font-size: 1.1rem;
+          }
+        }
+  
+        .service-desc {
+          font-size: 0.9rem;
+        }
+      }
+  }
+  
+  @media (max-width: 576px) {
+    .our-services {
+      padding: 3rem 0;
+  
+      .section-title {
+        font-size: 2rem;
+      }
+  
+      .service-card {
+        min-height: 280px;
+        padding: 1rem;
+  
+        .service-icon {
+          font-size: 1.8rem;
+        }
+  
+        .service-title {
+          font-size: 1.3rem;
+  
+          span[dir="rtl"] {
+            font-size: 1rem;
+          }
+        }
+  
+        .service-desc {
+          font-size: 0.85rem;
+        }
+  
+        .btn-primary {
+          padding: 0.5rem 1rem;
+          font-size: 1rem;
+        }
+      }
+  }
+}
+  }
