@@ -45,7 +45,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   setActiveLink(link: string) {
     this.activeLink = link;
-    if (['home', 'about', 'services', 'contact'].includes(link)) {
+    if (['home', 'about', 'services','products', 'contact'].includes(link)) {
       this.router.navigate(['/'], { fragment: link === 'home' ? 'hero' : link });
     } else if (link === 'printing') {
       this.router.navigate(['/printing']);
@@ -99,6 +99,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
         break;
       case 'services':
         this.activeLink = 'services';
+        break;
+       case 'products':
+        this.activeLink = 'products';
         break;
       case 'contact':
         this.activeLink = 'contact';

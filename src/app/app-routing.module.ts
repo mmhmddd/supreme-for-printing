@@ -4,7 +4,7 @@ import { FeaturesRoutingModule } from './features/features-routing.module';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./features/features.module').then(m => m.FeaturesModule) },
-  { path: '**', redirectTo: '' } // Wildcard route for 404 handling
+  { path: '**', redirectTo: '' } 
 ];
 
 @NgModule({
@@ -12,7 +12,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled',
-      scrollOffset: [0, 75] // Adjusted to match navbar height (75px from margin-bottom)
+      scrollOffset: [0, 75] 
     }),
     FeaturesRoutingModule
   ],

@@ -14,22 +14,26 @@
   <div class="container">
     <h2 class="section-title" data-i18n="aboutUs.title">About Us</h2>
     <div class="company-profile">
-      <p data-i18n="aboutUs.profile1">Since its establishment in 2016, <strong>Supreme Company for Supply and Advertising (Orchid)</strong> has been a trusted name in the advertising and supply industry. Over the past nine years, we have provided exceptional advertising services to a wide range of organizations, institutions, and advertising agencies. Thanks to our commitment to quality, timely delivery, and client satisfaction, we have earned the confidence of our partners, establishing a strong reputation in the market.</p>
-      <p data-i18n="aboutUs.profile2">Our dedication to excellence drives us to deliver high-quality products tailored to our clients’ needs. From innovative advertising campaigns to premium printing and giveaway solutions, we strive to exceed expectations in every project we undertake.</p>
+      <p data-i18n="aboutUs.profile1">Founded in 2016, Supreme Company for Supply and Advertising (Orchid) has been a trusted leader in advertising for 9 years, serving organizations with quality and timely solutions.</p>
+      <p data-i18n="aboutUs.profile2">We deliver tailored, high-quality advertising and printing services to exceed client expectations.</p>
+      <p data-i18n="aboutUs.profile1.ar">منذ تأسيسها في 2016، أصبحت شركة سوبريم للتوريد والإعلان (أوركيد) رائدة موثوقة في مجال الإعلان لمدة 9 سنوات، مقدمة حلول عالية الجودة للمؤسسات.</p>
+      <p data-i18n="aboutUs.profile2.ar">نقدم خدمات إعلانية وطباعة مخصصة بجودة عالية لتجاوز توقعات العملاء.</p>
     </div>
     <h3 class="section-subtitle" data-i18n="aboutUs.foundersTitle">Our Founders</h3>
     <div class="row owners">
       <div class="col-lg-6 owner">
         <h4 data-i18n="aboutUs.founder1.name">Alfouly Hassan</h4>
-        <p data-i18n="aboutUs.founder1.desc">Alfouly Hassan, co-founder of Supreme Company, brings extensive experience in strategic planning and business development. His vision and leadership have been pivotal in shaping the company’s growth, ensuring every project meets the highest standards of quality and professionalism.</p>
+        <p data-i18n="aboutUs.founder1.desc">Co-founder with expertise in strategic planning, driving the company's growth and quality standards.</p>
+        <p data-i18n="aboutUs.founder1.desc.ar">المؤسس المشارك ذو خبرة في التخطيط الاستراتيجي، يدير نمو الشركة ومعايير الجودة.</p>
       </div>
       <div class="col-lg-6 owner">
-        <h4 data-i18n="aboutUs.founder2.name">Mohamed</h4>
-        <p data-i18n="aboutUs.founder2.desc">Mohamed, co-founder and creative visionary, excels in design and client relations. His innovative approach to advertising campaigns and dedication to client satisfaction have fostered long-lasting partnerships with prominent organizations across the region.</p>
+        <h4 data-i18n="aboutUs.founder2.name">Mohamed Kamal</h4>
+        <p data-i18n="aboutUs.founder2.desc">Co-founder and creative visionary, enhancing client relations with innovative designs.</p>
+        <p data-i18n="aboutUs.founder2.desc.ar">المؤسس المشارك والمبدع، يعزز علاقات العملاء بتصاميم مبتكرة.</p>
       </div>
     </div>
     <h3 class="section-subtitle" data-i18n="aboutUs.clientsTitle">Our Valued Clients</h3>
-    <p data-i18n="aboutUs.clientsIntro" style="font-size: 1.5rem ; font-weight: 600;">We are proud to have served a diverse array of esteemed organizations, including:</p>
+    <p data-i18n="aboutUs.clientsIntro" class="text-foundrs" style="font-size: 1.5rem; font-weight: 600;">We proudly serve esteemed organizations including:</p>
     <div class="client-slider">
       <button class="slider-arrow left-arrow" (click)="slideLeft()">
         <i class="fas fa-chevron-left"></i>
@@ -92,6 +96,34 @@
   </div>
 </section>
 
+
+  <!-- Our Products Section -->
+<section class="products-section" id="products">
+  <div class="container">
+    <h2 class="section-title">Our Products</h2>
+    <div class="product-slider-wrapper">
+      <div class="product-slider" #productSlider>
+        <div class="product-item" *ngFor="let product of products">
+          <div class="product-image" (click)="openModal(product.image)">
+            <img [src]="product.image" [alt]="product.name">
+            <div class="overlay">
+              <span class="product-type">{{ product.type }}</span>
+            </div>
+          </div>
+          <h3>{{ product.name }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for Product Image -->
+<div class="modal" *ngIf="showModal" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <span class="close-btn" (click)="closeModal()">×</span>
+    <img [src]="selectedImage" alt="Product Image" class="modal-image">
+  </div>
+</div>
 
 <section id="contact">
   <app-contact></app-contact>
